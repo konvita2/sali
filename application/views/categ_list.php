@@ -78,7 +78,7 @@
                             <button class="btn btn-default" 
                                     onclick="open_editor(<?=$qrow['id'];?>)">Ред</button>
                             <button class="btn btn-default"
-                                    onclick="alert('hello')">Уд</button>                            
+                                    onclick="">Уд</button>                            
                         </td>
                     </tr>   
                     

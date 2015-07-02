@@ -57,8 +57,7 @@ class Cat_model extends CI_Model{
         $res = '';
         
         $this->db->where('id',$cat_id);
-        $qres = $this->db->get('category',1);
-        
+        $qres = $this->db->get('category',1);        
         
         return $res;
     }

@@ -11,8 +11,9 @@ class Categ extends CI_Controller {
     }
 
     public function edit($id) {
-
-        $this->load->view('categ_edit', $data);
+        $this->load->model('Cat_model');    
+        
+        $this->load->view('categ_edit', $data); 
     }
 
 }
