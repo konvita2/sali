@@ -28,27 +28,36 @@
         </nav>       
         
         <div class="container">
-            <form>
+            
+            <?php if ($_SERVER['REQUEST_METHOD'] == 'POST'):  ?>
+
+            <?php else: ?>
+
+            <h3>Редактирование категории</h3>
+
+            <form class="sl-categ-form sl-form" method="post" action="categ_edit.php">
+
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <label for="">Код:</label>
+                    <input type="text" class="form-control" readonly 
+                           id='catId' name="catId" value="<?php echo $id; ?>"/>
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="">Наименование:</label>
+                    <input type="text" class="form-control" id='catNam' 
+                           name="catNam" value="<?php echo $nam; ?>"/>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile">
-                    <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Check me out
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+
+                <!-- need to add parent group !!! -->
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-primary">Отмена</button>
+
             </form>
+
+            <?php endif ?>
+
         </div>
         
     </body>   

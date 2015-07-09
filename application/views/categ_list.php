@@ -10,11 +10,13 @@
         
         <script type="text/javascript">
             
+            // not use for a while
             function open_editor(adr){
                 base_url = '<?=site_url();?>';
                 alert(base_url + '/categ/edit/' + adr);
                 //window.open();
             }
+            
             
         </script>
         
@@ -56,7 +58,7 @@
             
             <button class="btn btn-default">Новая категория</button>
             
-            <table class="table">
+            <table class="table table-condensed">
                 
                 <thead>
                     <tr>
@@ -72,11 +74,13 @@
                     
                     <tr>
                         <td><?=$qrow['id'];?></td>
-                        <td><?=$qrow['nam'];?></td>
+                        <td>
+                            <a href="<?php echo site_url('categ/edit').'/'.$qrow['id'];?>">
+                                <?=$qrow['nam'];?>
+                            </a>
+                        </td>
                         
                         <td>
-                            <button class="btn btn-default" 
-                                    onclick="open_editor(<?=$qrow['id'];?>)">Ред</button>
                             <button class="btn btn-default"
                                     onclick="">Уд</button>                            
                         </td>
@@ -89,8 +93,28 @@
                 
             </table>
             
-        </div>
 
+
+
+    <!-- <div class="container"> -->
+        <ul>
+            <li>
+                Ford
+                <ul>
+                    <li>Escort</li>
+                    <li>Sierra</li>
+                    <li>Mondeo</li>
+                </ul>
+            </li>
+
+            <li>Opel</li>
+
+
+            <li></li>
+
+        </ul>
+    <!-- </div> -->
+        </div>
     </body>
 
 </html>
