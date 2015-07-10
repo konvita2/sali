@@ -51,7 +51,34 @@ class Cat_model extends CI_Model{
     function get_top_level(){
         return $this->get_sub_level(0);
     }
-    
+
+    /**
+     * Получить список категорий верхнего уровня ввиде options (html)
+     * @param $selected - пункт по умолчанию
+     */
+    function get_html_rows($selected){
+        $res = '';
+        $ar = $this->get_top_level();
+        foreach ($ar as $cat) {
+            $vl = $cat['nam'];
+            if(trim($vl) == trim($selected)){
+                $res .= "<option selected value='$vl'>$vl</option>";
+            }
+            else{
+                $res .= "<option value='$vl'>$vl</option>";
+            }
+        }
+
+        if(empty($selected)){
+            $res .= "<option selected value='без категории'>-- без категории --</option>";
+        }
+        else{
+            $res .= "<option value='без категории'>-- без категории --</option>";
+        }
+
+        return $res;
+    }
+
     /**
      * Получить подкатегории указанной категории верхнего уровня
      * @param type $parent_cat_id
@@ -77,7 +104,28 @@ class Cat_model extends CI_Model{
         
         return $res;
     }
-    
+
+    /**
+     * получить id категории по наименованию
+     * @todo решить вопрос с повторяемостью наименований
+     * !!! есть проблема когда будет одинаковые наименования в таблице
+     * !!! но вводим ограничение
+     * !!! - ищем в первом уровне
+     * !!! - в первом уровне одинаковых не должно быть
+     * @param $cat_name
+     */
+    function get_id_by_name($cat_name){
+        $res = 0;
+
+        $qres = $this->db->get_where('category', array('nam' => trim($cat_name)), 1);
+        foreach ($qres->result() as $row) {
+            $res = $row->id;
+            break;
+        }
+
+        return $res;
+    }
+
     /**
      * Получить одну запись по id
      * @param type $cat_id
@@ -95,5 +143,22 @@ class Cat_model extends CI_Model{
         }          
         return $res;
     }
-    
+
+    /**
+     * Сохранить данные
+     * если id = 0 добавляем новую запись
+     * иначе обновляем по id
+     * @param $newdata
+     * @param $id
+     */
+    function save($newdata, $id){
+        if($id == 0){
+            $this->db->insert('category',$newdata);
+        }
+        else{
+            $this->db->where('id',$id);
+            $this->db->update('category',$newdata);
+        }
+    }
+
 }
