@@ -1,10 +1,33 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 10.07.2015
- * Time: 12:36
- * @todo Сделать нормальное представление
- */
+<!DOCTYPE html>
+<html lang="ru">
 
-Все ОК!
+<? $this->load->view('main_head'); ?>
+
+<body>
+
+<? $this->load->view('main_navbar'); ?>
+
+<div class="container">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Успешно выполнено</h3>
+        </div>
+        <div class="panel-body">
+            <p><?=$textinfo?></p>
+        </div>
+    </div>
+
+    <?
+
+    $ar = array(
+        'class' => 'btn btn-primary',
+    );
+    echo anchor('categ','К списку категорий',$ar);
+
+    ?>
+
+</div>
+
+</body>
+</html>
