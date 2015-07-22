@@ -54,7 +54,7 @@
         <div class="form-group">
             <label for="catParent" class="col-sm-2 control-label">Родительская категория:</label>
             <div class="col-sm-4">
-                <select class="form-control" name="parent_nam" id="catParent">
+                <select class="form-control" name="parent_id" id="catParent">
                     <?= $top_level_cats ?>
                 </select>
             </div>

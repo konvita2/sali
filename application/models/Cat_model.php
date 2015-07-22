@@ -61,19 +61,20 @@ class Cat_model extends CI_Model{
         $ar = $this->get_top_level();
         foreach ($ar as $cat) {
             $vl = $cat['nam'];
+            $vl_id = $cat['id'];
             if(trim($vl) == trim($selected)){
-                $res .= "<option selected value='$vl'>$vl</option>";
+                $res .= "<option selected value='$vl_id'>$vl</option>";
             }
             else{
-                $res .= "<option value='$vl'>$vl</option>";
+                $res .= "<option value='$vl_id'>$vl</option>";
             }
         }
 
         if(empty($selected)){
-            $res .= "<option selected value='без категории'>-- без категории --</option>";
+            $res .= "<option selected value='0'>-- без категории --</option>";
         }
         else{
-            $res .= "<option value='без категории'>-- без категории --</option>";
+            $res .= "<option value='0'>-- без категории --</option>";
         }
 
         return $res;

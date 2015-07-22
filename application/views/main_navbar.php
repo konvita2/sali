@@ -11,6 +11,27 @@
                 <li><a href="#">Оплата и доставка</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
+
+            <? //$this->load->library('ion_auth'); ?>
+            <? $this->load->helper('url'); ?>
+
+
+            <? if($this->ion_auth->logged_in()): ?>
+
+                <?
+                $usr = $this->ion_auth->user()->row();
+                $usr = $usr->username;
+                ?>
+
+                <?
+                $ar = array('class' => 'btn btn-default navbar-btn navbar-right');
+                echo anchor('admin/logout','Выход ' . $usr, $ar);
+                ?>
+
+            <? else: ?>
+
+            <? endif ?>
+
         </div>
     </div>
 </nav>

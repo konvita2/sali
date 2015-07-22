@@ -12,6 +12,23 @@ class Categ extends CI_Controller {
     }
     */
 
+    function __construct(){
+        parent::__construct();
+
+        if(!$this->ion_auth->logged_in()){
+            redirect('admin/login','refresh');
+        }
+
+        $this->load->database();
+        $this->load->library(array('ion_auth','form_validation'));
+        $this->load->helper(array('url','language'));
+
+        $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'),
+            $this->config->item('error_end_delimiter', 'ion_auth'));
+
+        $this->lang->load('auth');
+    }
+
     public function index(){
         $this->load->model('Cat_model');
         $data['cat_array'] = $this->Cat_model->get_all_as_tree();
@@ -41,9 +58,9 @@ class Categ extends CI_Controller {
             $newdata = array(
                 'id' => $id,
                 'nam' => $this->input->post('nam'),
-                'parent_id' => $this->Cat_model->get_id_by_nam('parent_nam')
+                'parent_id' => $this->input->post('parent_id'),
             );
-            $this->db->save($newdata, $id);
+            $this->categ->save($newdata, $id);
 
             $this->load->view('categ_ok');
         }
@@ -54,6 +71,7 @@ class Categ extends CI_Controller {
      * @return array
      */
     function get_rules(){
+        /*
         $ar = array(
             array(
                 'field' => 'nam',
@@ -66,6 +84,16 @@ class Categ extends CI_Controller {
                 'rules' => 'required'
             ),
         );
+        */
+
+        $ar = array(
+            array(
+                'field' => 'nam',
+                'label' => 'Наименование категории',
+                'rules' => 'required'
+            ),
+        );
+
 
         return $ar;
     }
