@@ -65,6 +65,8 @@ class Admin extends CI_Controller {
      */
     function logout(){
         $logout = $this->ion_auth->logout();
+        //redirect('main', 'refresh');
+        $this->load->view('main');
     }
 
 

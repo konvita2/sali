@@ -35,6 +35,10 @@ class Categ extends CI_Controller {
         $this->load->view('categ_index', $data);
     }
 
+    /**
+     * edit category
+     * @param $id
+     */
     public function edit($id) {
 
         $this->load->model('Cat_model','categ');
@@ -62,6 +66,49 @@ class Categ extends CI_Controller {
             );
             $this->categ->save($newdata, $id);
 
+            $data['textinfo'] = 'Сохранены изменения по категории ' .
+                $this->input->post('nam');
+            $this->load->view('categ_ok', $data);
+        }
+    }
+
+    /**
+     * add new category with parent_id as default
+     * @param $par_id - parent category id
+     */
+    public function add($par_id){
+
+        $this->load->model('Cat_model','categ');
+
+        $par_nam = $this->categ->get_name_by_id($par_id);
+
+        $data['mode'] = 'nw';
+        $data['top_level_cats'] = $this->categ->get_html_rows($par_nam);
+        $data['parent_id'] = $par_id;
+
+        $this->form_validation->set_rules('nam', 'Наименование', 'required');
+
+        // @todo parent_id - how to test (if it is nessesary)
+
+        if($this->form_validation->run() == FALSE){
+
+            $this->load->view('categ_edit', $data);
+        }
+        else{
+            $nam = $this->input->post('nam');
+            $parent_id = $this->input->post('parent_id');
+
+            $newdata = array(
+                'nam' => $nam,
+                'parent_id' => $parent_id,
+            );
+
+            $parent_name = $this->categ->get_name_by_id($parent_id);
+
+            $this->categ->save($newdata);
+
+            $data['textinfo'] = 'Создана новая категория ' .
+                $nam . ' в родительской категории ' . $parent_name;
             $this->load->view('categ_ok');
         }
     }

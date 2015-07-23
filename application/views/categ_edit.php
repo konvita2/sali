@@ -15,9 +15,14 @@
 
     <?
 
-    $id = $cat_elem['id'];
-    $nam = $cat_elem['nam'];
-
+    if($mode == 'ed' OR $mode == 'dl'){
+        $id = $cat_elem['id'];
+        $nam = $cat_elem['nam'];
+    }
+    elseif($mode == 'nw'){
+        $id = 0;
+        $nam = '';
+    }
 
     ?>
 
@@ -33,7 +38,11 @@
         $arForm = array('class' => 'form-horizontal');
     ?>
 
-    <? echo form_open("categ/edit/$id",$arForm); ?>
+    <?
+    // form open
+    if($mode == 'ed') echo form_open("categ/edit/$id",$arForm);
+    if($mode == 'nw') echo form_open("categ/add/$parent_id",$arForm);
+    ?>
 
         <div class="form-group">
             <label for="catId" class="col-sm-2 control-label">Код:</label>

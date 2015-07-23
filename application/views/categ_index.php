@@ -13,7 +13,7 @@
 
     <ul>
 
-    <a class="btn btn-default btn-xs" type="button">
+    <a class="btn btn-default btn-xs" type="button" href="categ/add/0">
         <span class="glyphicon glyphicon-plus"></span>
     </a>
 
@@ -23,7 +23,7 @@
                 $cat0_id = $cat0['id'];
             ?>
             <a href="categ/edit/<?=$cat0_id?>"><?=$cat0['nam']?></a>
-            <a class="btn btn-default btn-xs" type="button">
+            <a class="btn btn-default btn-xs" type="button" href="categ/add/<?=$cat0_id?>">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
 

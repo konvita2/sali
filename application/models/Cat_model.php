@@ -97,6 +97,9 @@ class Cat_model extends CI_Model{
      */
     function get_name_by_id($cat_id){
         $res = '';
+
+        if($cat_id == 0)
+            return 'без категории';
         
         $ar = $this->get_row_by_id($cat_id);
         if(!empty($ar)){
@@ -152,7 +155,7 @@ class Cat_model extends CI_Model{
      * @param $newdata
      * @param $id
      */
-    function save($newdata, $id){
+    function save($newdata, $id = 0){
         if($id == 0){
             $this->db->insert('category',$newdata);
         }
