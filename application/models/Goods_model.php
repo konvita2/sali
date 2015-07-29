@@ -15,6 +15,9 @@ class Goods_model extends CI_Model{
     public $description;    // описание товара
     public $price;          // цена товара
 
+    //+++
+    public $category_name;
+
     // @todo добавить доступ к изображениям и типам товаров
 
     function __construct(){
@@ -27,6 +30,7 @@ class Goods_model extends CI_Model{
      * опционально можно задать фильтр по категории
      */
     public function get_all($category_id_filter = 0){
+        $res = array();
 
         $this->db->order_by('title');
 
@@ -35,7 +39,16 @@ class Goods_model extends CI_Model{
         }
 
         $query = $this->db->get('goods');  // @todo надо подумать над pagination
-        return $query->result_array();
+        $res = $query->result_array();
+
+        $this->load->model('Cat_model','categ');
+
+        // add category_name
+        foreach ($res as &$row) {
+            $row['category_name'] = $this->categ->get_name_by_id($row['category_id']);
+        }
+
+        return $res;
     }
 
     /**

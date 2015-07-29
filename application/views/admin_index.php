@@ -22,7 +22,7 @@ $this->load->helper('form');
 
             <?
             $ar = array('class' => 'btn btn-primary');
-            echo anchor('#','Товары',$ar);
+            echo anchor('goods','Товары',$ar);
             ?>
 
             <?
