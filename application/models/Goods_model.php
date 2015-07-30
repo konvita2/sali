@@ -58,9 +58,14 @@ class Goods_model extends CI_Model{
     private function get_row_by($ar_filter){
         $res = array();
 
+        $this->load->model('Cat_model','categ');
+
         $query = $this->db->get_where('goods', $ar_filter, 1);
         foreach ($query->result_array() as $row) {
             $res = $row;  // @todo perhaps add imgs and subgoods
+
+            $res['category_name'] = $this->categ->get_name_by_id($row['category_id']);
+
             break;
         }
 
@@ -95,6 +100,16 @@ class Goods_model extends CI_Model{
         $ar_filter = array('title' => trim($goods_art));
         return $this->get_row_by($ar_filter);
     }
+
+    public function update($id,$newrow){
+        $this->db->where('id', $id);
+        $this->db->update('goods', $newrow);
+    }
+
+    public function insert($newrow){
+
+    }
+
 
 
 

@@ -81,6 +81,47 @@ class Cat_model extends CI_Model{
     }
 
     /**
+     * Получить список все категорий в виде options (html)
+     * второй уровень - с легким отступом
+     * @param $selected - пункт по умолчанию
+     */
+    public function get_all_html_rows($selected)
+    {
+        $res = '';
+        $top_level = $this->get_top_level();
+        foreach($top_level as $row_top_level){
+            $vl = $row_top_level['nam'];
+            $vl_id = $row_top_level['id'];
+            if(trim($vl) == trim($selected))
+                $res .= "<option selected value='$vl_id'>$vl</option>";
+            else
+                $res .= "<option value='$vl_id'>$vl</option>";
+
+            // second level
+            $sub_level = $this->get_sub_level($vl_id);
+            foreach ($sub_level as $row_sub_level)
+            {
+                $vl = $row_sub_level['nam'];
+                $vl_id = $row_sub_level['id'];
+                if(trim($vl) == trim($selected))
+                    $res .= "<option selected value='$vl_id'>---$vl</option>";
+                else
+                    $res .= "<option value='$vl_id'>---$vl</option>";
+            }
+        }
+
+        if(empty($selected))
+            $res .= "<option selected value='0'>-- без категории --</option>";
+        else
+            $res .= "<option value='0'>-- без категории --</option>";
+
+        return $res;
+    }
+
+
+
+
+    /**
      * Получить подкатегории указанной категории верхнего уровня
      * @param type $parent_cat_id
      */
