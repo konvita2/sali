@@ -18,15 +18,19 @@
 
             <? if($this->ion_auth->logged_in()): ?>
 
-                <?
+            <div class="form-group">
+                <?php
                 $usr = $this->ion_auth->user()->row();
                 $usr = $usr->username;
                 ?>
 
-                <?
-                $ar = array('class' => 'btn btn-default navbar-btn navbar-right');
+                <?php
+                $ar = array(
+                    'class' => 'btn btn-default navbar-btn navbar-right',
+                    'style' => 'margin-right: 5px;');
                 echo anchor('admin/logout','Выход ' . $usr, $ar);
                 ?>
+            </div>
 
             <? else: ?>
 

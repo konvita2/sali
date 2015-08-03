@@ -101,13 +101,47 @@ class Goods_model extends CI_Model{
         return $this->get_row_by($ar_filter);
     }
 
+    /**
+     * @param $id - row id to update
+     * @param $newrow - array of fields except id
+     */
     public function update($id,$newrow){
         $this->db->where('id', $id);
         $this->db->update('goods', $newrow);
     }
 
+    /**
+     * @param $newrow - array of fields except id
+     */
     public function insert($newrow){
+        $this->db->insert('goods', $newrow);
+    }
 
+    /**
+     * delete row by id
+     * @param $rowid
+     */
+    public function delete($rowid)
+    {
+        $this->db->where('id',$rowid);
+        $this->db->delete('goods');
+    }
+
+    /**
+     * get empty new row
+     */
+    public function get_newrow(){
+        $ar = array(
+            'id' => 0,
+            'category_id' => 0,
+            'art' => '',
+            'title' => '',
+            'description' => '',
+            'price' => 0,
+
+            'category_name' => ''
+        );
+        return $ar;
     }
 
 

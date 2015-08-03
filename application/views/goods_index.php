@@ -9,21 +9,29 @@
 
 <div class="container">
 
-    <h3>Список товаров</h3>
+    <?php
+    $ar = array('class' => 'btn btn-primary');
+    echo anchor('admin/index', 'Админка', $ar);
+    ?>
+    
+    <h3>Список товаров</h3> 
 
-    <a class="btn btn-default" type="button" href="#">Добавить товар</a>
+    <?php
+    $ar = array('class' => 'btn btn-default');
+    echo anchor('goods/add', 'Добавить товар', $ar);
+    ?>
 
     <table class="table">
 
         <thead>
             <tr>
-                <td>Код</td>
-                <td>Категория</td>
-                <td>Артикул</td>
-                <td>Наименование</td>
-                <td>Описание</td>
-                <td>Цена</td>
-                <td>Действия</td>
+                <th>Код</th>
+                <th>Категория</th>
+                <th>Артикул</th>
+                <th>Наименование</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th>Действия</th>
             </tr>
         </thead>
 
@@ -39,6 +47,20 @@
                     <td><?=$row['title']?></td>
                     <td><?=$row['description']?></td>
                     <td><?=$row['price']?></td>
+
+                    <? $id = $row['id']; ?>
+
+                    <td>
+                        <? $href = base_url('index.php/goods/edit/' . $id); ?>
+                        <a class="btn btn-default" href="<?=$href?>" title="Редактировать">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+
+                        <? $href = base_url('index.php/goods/del/' . $id); ?>
+                        <a class="btn btn-default" type="button" href="<?=$href?>" title="Удалить">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
 
                 </tr>
 

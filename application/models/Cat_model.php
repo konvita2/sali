@@ -85,7 +85,7 @@ class Cat_model extends CI_Model{
      * второй уровень - с легким отступом
      * @param $selected - пункт по умолчанию
      */
-    public function get_all_html_rows($selected)
+    public function get_all_html_rows($selected = '')
     {
         $res = '';
         $top_level = $this->get_top_level();
@@ -104,9 +104,9 @@ class Cat_model extends CI_Model{
                 $vl = $row_sub_level['nam'];
                 $vl_id = $row_sub_level['id'];
                 if(trim($vl) == trim($selected))
-                    $res .= "<option selected value='$vl_id'>---$vl</option>";
+                    $res .= "<option selected value='$vl_id'>--- $vl</option>";
                 else
-                    $res .= "<option value='$vl_id'>---$vl</option>";
+                    $res .= "<option value='$vl_id'>--- $vl</option>";
             }
         }
 

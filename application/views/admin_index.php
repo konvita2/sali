@@ -15,17 +15,17 @@ $this->load->helper('form');
 
     <h3>Административный раздел</h3>
 
-            <?
+            <?php
                 $ar = array('class' => 'btn btn-primary');
                 echo anchor('categ','Категории товаров',$ar);
             ?>
 
-            <?
+            <?php
             $ar = array('class' => 'btn btn-primary');
             echo anchor('goods','Товары',$ar);
             ?>
 
-            <?
+            <?php
                 $ar = array('class' => 'btn btn-primary');
                 echo anchor('#','Администраторы',$ar);
             ?>
