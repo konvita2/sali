@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-// @todo delete when real controller will be created
-
 class Auth extends CI_Controller {
 
 	function __construct()
