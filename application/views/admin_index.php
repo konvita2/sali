@@ -27,7 +27,7 @@ $this->load->helper('form');
 
             <?php
                 $ar = array('class' => 'btn btn-primary');
-                echo anchor('#','Администраторы',$ar);
+                echo anchor('#','Пользователи',$ar);
             ?>
 
 </div>

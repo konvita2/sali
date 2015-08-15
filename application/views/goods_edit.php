@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<? $this->load->view('main_head'); ?>
+<?php
+//if($mode == 'dl' || $mode == 'ed')
+{
+    $id = $row['id'];
+    $art = $row['art'];
+    $title = $row['title'];
+    $category_id = $row['category_id'];
+    $category_name = $row['category_name'];
+    $description = trim($row['description']);
+    $price = $row['price'];
+}
+?>
+
+<?php
+    $data['tit'] = 'Товар';
+    $this->load->view('main_head', $data);
+?>
 
 <body>
 

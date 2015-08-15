@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<? $this->load->view('main_head'); ?>
+<?php
+    $data['tit'] = 'Товары';
+    $this->load->view('main_head', $data);
+?>
 
 <body>
 
