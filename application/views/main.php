@@ -84,14 +84,267 @@
                     </div>
                 </div>
 
-
-
-
-
             </aside>
 
             <article class="col-sm-9">
-                article
+
+                <div class="col-sm-10 small text-justify">
+                    <p>Атласная ткань очень прочная, сохраняет натуральный блеск много лет.
+                        Атласная ткань является гипоаллергенным материалом, в нем не заводятся насекомые,
+                        например, клещи.
+                    </p>
+
+                    <p class="text-muted">Атлас - довольно легкая ткань, отличается высокой упругостью, обладает красивым внешним видом.
+                        Ткань обладает значительной растяжимостью, скольжением и сыпучестью. Атлас мягкая и тонкая
+                        ткань, которая требует бережного обращения и особого ухода. В состав атласа входит Вискоза,
+                        Хлопок и Полиэстер. Вискоза - натуральная ткань, обладающая главными преимуществами натурального
+                        шёлка (хорошей гладкостью, блеском, малой сминаемостью). Хлопок - мягкая, теплая, натуральная
+                        ткань, которая является идеальной составляющей качественного постельного белья.
+                        Полиэстер - минимальное добавление полиэстера необходимо, чтобы эксплуатационные свойства
+                        ткани были на высоком потребительском уровне; чтобы ткань не линяла при стирке, не выгорала
+                        на солнце, была более износостойкая в использовании.
+                    </p>
+                </div>
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-bronza_mini.jpg" class="img-responsive eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Бронзовый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Полуторный комплект</td>
+                                    <td>330 грн</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Двуспальный комплект</td>
+                                    <td>410 грн</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Еврокомплект</td>
+                                    <td>480 грн</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Семейный комплект</td>
+                                    <td>540 грн</td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-lilova.jpg" class="eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Лиловый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Полуторный комплект</td>
+                                <td>330 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Двуспальный комплект</td>
+                                <td>410 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Еврокомплект</td>
+                                <td>480 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Семейный комплект</td>
+                                <td>540 грн</td>
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-lilova.jpg" class="eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Лиловый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Полуторный комплект</td>
+                                <td>330 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Двуспальный комплект</td>
+                                <td>410 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Семейный комплект</td>
+                                <td>540 грн</td>
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-lilova.jpg" class="eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Лиловый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Полуторный комплект</td>
+                                <td>330 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Двуспальный комплект</td>
+                                <td>410 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Еврокомплект</td>
+                                <td>480 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Семейный комплект</td>
+                                <td>540 грн</td>
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-lilova.jpg" class="eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Лиловый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Полуторный комплект</td>
+                                <td>330 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Двуспальный комплект</td>
+                                <td>410 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Еврокомплект</td>
+                                <td>480 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Семейный комплект</td>
+                                <td>540 грн</td>
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 goods-title">
+                    <div class="col-sm-6">
+                        <img src="img/atlas-lilova.jpg" class="eskiz"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6>Атлас "Лиловый"</h6>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <table class="table price-table">
+                            <thead></thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Полуторный комплект</td>
+                                <td>330 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Двуспальный комплект</td>
+                                <td>410 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Еврокомплект</td>
+                                <td>480 грн</td>
+                            </tr>
+
+                            <tr>
+                                <td>Семейный комплект</td>
+                                <td>540 грн</td>
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
             </article>
 
         </div>

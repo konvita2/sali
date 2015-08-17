@@ -13,7 +13,8 @@ body {
 }
 
 .sidebar {
-    background-color: #e5e5e5;
+    background-color: #a6e1ec;
+    border-radius: 10px 0 0 0;
 }
 
 form.sl-form {
@@ -22,5 +23,35 @@ form.sl-form {
 
 aside.leftmenu {
     padding-top: 10px;
+}
+
+div.panel-heading {
+
+}
+
+div.goods-title {
+    /*
+    border-color: #777777;
+    border-style: solid;
+    border-width: 1px;*/
+    margin: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e3e3e3;
+    border-radius: 10px 0 0 0;
+}
+
+.eskiz {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.goods-title h6 {
+    font-weight: bold;
+}
+
+.price-table{
+    margin-top: 5px;
 }
 
