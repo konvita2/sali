@@ -109,7 +109,7 @@ class Categ extends CI_Controller {
 
             $data['textinfo'] = 'Создана новая категория ' .
                 $nam . ' в родительской категории ' . $parent_name;
-            $this->load->view('categ_ok');
+            $this->load->view('categ_ok', $data);
         }
     }
 

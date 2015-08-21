@@ -33,6 +33,9 @@ class Cat_model extends CI_Model{
     /**
      * Получить список всех категорий ввиде дерева
      * массив массивов
+     *
+     * @todo 1) add active using 2) add sort order for category 3)
+     *
      */
     function get_all_as_tree(){
         $arTop = $this->get_sub_level(0);
@@ -53,7 +56,7 @@ class Cat_model extends CI_Model{
     }
 
     /**
-     * Получить список категорий верхнего уровня ввиде options (html)
+     * Получить список категорий верхнего уровня в виде options (html)
      * @param $selected - пункт по умолчанию
      */
     function get_html_rows($selected){
@@ -117,9 +120,6 @@ class Cat_model extends CI_Model{
 
         return $res;
     }
-
-
-
 
     /**
      * Получить подкатегории указанной категории верхнего уровня
@@ -205,5 +205,6 @@ class Cat_model extends CI_Model{
             $this->db->update('category',$newdata);
         }
     }
+
 
 }

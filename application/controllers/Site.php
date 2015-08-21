@@ -15,7 +15,9 @@ class Site extends CI_Controller {
      * main site page
      */
     public function index(){
-        $this->load->view('main');
+        $this->load->model('Cat_model', 'cat');
+        $data['arcat'] = $this->cat->get_all_as_tree();
+        $this->load->view('main', $data);
     }
 
 } 
